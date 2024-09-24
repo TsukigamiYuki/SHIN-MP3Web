@@ -22,10 +22,11 @@
       <button class="close-button" onclick="toggleSidebar()">X</button>
       <h3>Select Album</h3>
       <ul>
-        <li class="album-item" id="album1" onclick="selectAlbum(0)">Show By Rock</li>
-        <li class="album-item" id="album2" onclick="selectAlbum(1)">Dohna Dohna</li>
-        <li class="album-item" id="album3" onclick="selectAlbum(2)">Will Stetson</li>
-        <li class="album-item" id="album4" onclick="selectAlbum(3)">GARNiDELiA</li>
+        <li class="album-item" id="album1" onclick="selectAlbum(0)">All Songs</li>
+        <li class="album-item" id="album2" onclick="selectAlbum(1)">Show By Rock</li>
+        <li class="album-item" id="album3" onclick="selectAlbum(2)">Dohna Dohna</li>
+        <li class="album-item" id="album4" onclick="selectAlbum(3)">Will Stetson</li>
+        <li class="album-item" id="album5" onclick="selectAlbum(4)">GARNiDELiA</li>
       </ul>
     </div>
   </div>
@@ -65,6 +66,27 @@
   <script>
 
     var albums = [
+    {
+        title: "All Songs",
+        artist: "None",
+
+        thumbnail: "Misc/pics/1678472428481.png",
+        tracks: [
+          { title: "十六夜ゐ", artist: "徒然なる操り霧幻庵", src: "Misc/tracks/十六夜ゐ - 徒然なる操り霧幻庵 (Tsurezurenaru Ayatsuri Mugenan)(MP3_160K).mp3" },
+          { title: "SASURAI", artist: "徒然なる操り霧幻庵", src: "Misc/tracks/_SASURAI_ - 徒然なる操り霧幻庵 (Tsurezurenaru Ayatsuri Mugenan)(MP3_160K).mp3" },
+          { title: "Tabimichi Yoiyoi Yume Hanabi", artist: "徒然なる操り霧幻庵", src: "Misc/tracks/Tabimichi Yoiyoi Yume Hanabi - 徒然なる操り霧幻庵 (Tsurezurenaru Ayatsuri Mugenan)(MP3_160K).mp3" },
+          { title: "Whatcha;Whatcha Doin", artist: "AliceSoft", src: "Misc/tracks/Whatcha_Whatcha Doin_(MP3_160K)_1.mp3" },
+          { title: "SPARKs", artist: "AliceSoft", src: "Misc/tracks/SPARKs(MP3_160K).mp3" },
+          { title: "あかときやみから", artist: "AliceSoft", src: "Misc/tracks/あかときやみから(MP3_160K).mp3" },
+          { title: "Live in Life ", artist: "Will Stetson", src: "Misc/tracks/Live in Life - Will Stetson [MV] 【Hu Tao Fansong】(MP3_160K).mp3" },
+          { title: "Morality Lesson", artist: "Will Stetsont", src: "Misc/tracks/Morality Lesson - Will Stetson [MV] 【HSR Fansong】(M4A_128K).m4a" },
+          { title: "Writing on the Wall ", artist: "Will Stetson", src: "Misc/tracks/Writing on the Wall - Will Stetson [MV] 【Kaveh Fansong】(MP3_160K).mp3" },
+          { title: "極楽浄土[Gokuraku Jodo]", artist: "GARNiDELiA", src: "Misc/tracks/【みうめ・メイリア・217】極楽浄土[Gokuraku Jodo]  OFFiCiAL(MP3_160K).mp3" },
+          { title: "宵闇胡蝶[Yoiyami Kocho]", artist: "GARNiDELiA", src: "Misc/tracks/【りりちよ・メイリア】宵闇胡蝶[Yoiyami Kocho] OFFiCiAL【踊っちゃってみた第10弾】(MP3_160K).mp3" },
+          { title: "謳歌爛漫[Oka Ramman]", artist: "GARNiDELiA", src: "Misc/tracks/【みうめ・メイリア・217】謳歌爛漫[Oka Ramman] OFFiCiAL【GARNiDELiA】(MP3_160K).mp3" }
+        ],
+        backgroundImage: "url('Misc/pics/sakura.jpg')"
+      },
       {
         title: "Show By Rock",
         artist: "Tsurezurenaru Ayatsuri Mugenan",
@@ -139,9 +161,11 @@
     function selectAlbum(index) {
       currentAlbumIndex = index;
       loadTrack(currentAlbumIndex, 0);
+      loadTrackList(currentAlbumIndex, 0);
     }
 
     loadTrack(currentAlbumIndex, 0);
+    loadTrackList(currentAlbumIndex, 0);
 
     audio.addEventListener('play', function(){
       playButton.textContent = '❚❚ Pause'
