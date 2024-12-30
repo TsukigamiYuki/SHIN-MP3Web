@@ -15,6 +15,58 @@ body::-webkit-scrollbar{
   display: none;
 }
 
+header {
+  background-color: rgba(128, 128, 128, 0.9);
+  text-align: center;
+  width: 100%;
+  z-index: 1000;
+  padding: 5px;
+}
+
+header h1 {
+  font-size: 4.5rem;
+  color: white;
+  font-family: 'Tangerine', cursive;
+  margin-top: -25px;
+  margin-bottom: -25px;
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+}
+
+header nav ul li {
+  display: inline;
+}
+
+header nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: color 0.3s, text-shadow 0.3s;
+}
+
+#logout-btn {
+  cursor: pointer;
+  color: #fff;
+  transition: color 0.3s, text-shadow 0.3s;
+}
+
+#logout-btn:hover {
+  color: #d4006a;
+  text-shadow: 0 0 5px d4006a;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+  color: #d4006a;
+  text-shadow: 0 0 5px #d4006a;
+}
+
 .sidebar {
   height: 100vh;
   width: 250px;
@@ -176,49 +228,6 @@ h1{
   color: white;
 }
 
-.login-popup {
-  position: fixed;
-  top: 10px;
-  right: 10px;
-  z-index: 10;
-}
-
-.login-popup button {
-  padding: 10px 20px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  cursor: pointer;
-}
-
-.login-form {
-  display: none;
-  position: fixed;
-  top: 50px;
-  right: 10px;
-  background-color: white;
-  padding: 20px;
-  border: 1px solid #ddd;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-  z-index: 10;
-}
-
-.login-form input[type="text"],
-.login-form input[type="password"] {
-  width: 100%;
-  padding: 10px;
-  margin: 10px 0;
-  box-sizing: border-box;
-}
-
-.login-form input[type="submit"] {
-  background-color: #007bff;
-  color: white;
-  padding: 10px;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-}
 
 #player-container {
   width: 350px;
@@ -337,4 +346,79 @@ h1{
 
 #track-list-container li:hover {
   background-color: #5555559d;
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 1rem 0;
+  margin-top: 20px;
+  width: 100%;
+}
+
+
+footer p {
+  font-size: 0.9rem;
+}
+
+/* Media Queries for responsiveness */
+
+/* For tablets and smaller screens */
+@media (max-width: 768px) {
+  header h1 {
+      font-size: 1.6rem;
+  }
+
+  header nav ul {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  header nav ul li {
+      margin: 0.5em 0;
+  }
+
+  article h2 {
+      font-size: 1.6rem;
+  }
+
+  article .meta {
+      font-size: 0.8rem;
+  }
+
+  article img {
+      margin-bottom: 1.5em;
+  }
+
+  footer p {
+      font-size: 0.8rem;
+  }
+}
+
+/* For mobile devices */
+@media (max-width: 480px) {
+  header h1 {
+      font-size: 1.4rem;
+  }
+
+  header nav ul li a {
+      font-size: 0.9rem;
+  }
+
+  article h2 {
+      font-size: 1.4rem;
+  }
+
+  article .meta {
+      font-size: 0.75rem;
+  }
+
+  footer p {
+      font-size: 0.75rem;
+  }
+
+  main {
+      padding: 1.5em;
+  }
 }
